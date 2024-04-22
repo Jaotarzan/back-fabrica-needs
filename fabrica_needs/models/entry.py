@@ -7,3 +7,5 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.donor
+    
+    
