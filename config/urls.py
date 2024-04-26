@@ -7,6 +7,11 @@ from uploader.router import router as uploader_router
 
 from rest_framework.routers import DefaultRouter
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 from fabrica_needs.views import EntryViewSet, OutflowViewSet, ProductViewSet, WalletViewSet
 
 router = DefaultRouter()
@@ -19,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path("api/media/", include(uploader_router.urls)),
+    path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 urlpatterns += static(settings.MEDIA_ENDPOINT, document_root=settings.MEDIA_ROOT)
