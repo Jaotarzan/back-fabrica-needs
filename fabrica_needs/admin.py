@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 from fabrica_needs.models import Entry, Outflow, Product, Wallet
 
 @admin.register(Entry)

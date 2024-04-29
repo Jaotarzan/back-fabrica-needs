@@ -12,13 +12,14 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from fabrica_needs.views import EntryViewSet, OutflowViewSet, ProductViewSet, WalletViewSet
+from fabrica_needs.views import EntryViewSet, OutflowViewSet, ProductViewSet, UserViewSet , WalletViewSet
 
 router = DefaultRouter()
 router.register(r"entries", EntryViewSet)
 router.register(r"outflows", OutflowViewSet)
 router.register(r"products", ProductViewSet)
 router.register(r"wallet", WalletViewSet)
+router.register(r"users", UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
