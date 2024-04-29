@@ -7,7 +7,5 @@ class Entry(models.Model):
     donor = models.ForeignKey(User, on_delete=models.PROTECT, related_name="doação")
 
     def __str__(self):
-        return self.donor
+        return str(self.donor)
     
-    
-        
