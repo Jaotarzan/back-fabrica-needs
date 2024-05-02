@@ -23,10 +23,10 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODE = os.getenv("MODE")
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = 'django-insecure-@dc(-vr0ilfur-$j%=9t9&=!v^s@er56w1%p02ueqnwodo8jhs'
 DEBUG = os.getenv("DEBUG", "False")
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = ["*"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'uploader',
     "corsheaders",
     "rest_framework_simplejwt",
+    'waitress'
 ]
 
 MIDDLEWARE = [
