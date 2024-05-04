@@ -1,4 +1,5 @@
 from waitress import serve
-from config import wsgi
+from config.wsgi import application
 
-serve(wsgi, host='0.0.0.0', port=8000)
+if __name__ == '__main__':
+    serve(application, port='8000')
