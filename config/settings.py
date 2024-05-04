@@ -23,10 +23,11 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 MODE = os.getenv("MODE")
 
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "9b7d2c34a8484b3ca7498795aca261942c49be2cf8685c1798a06a8a2c173e24"
+
 DEBUG = os.getenv("DEBUG", "False")
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://render.com/"]
 
 
 # Application definition
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'uploader',
     "corsheaders",
     "rest_framework_simplejwt",
-    'waitress'
+    "waitress"
 ]
 
 MIDDLEWARE = [
