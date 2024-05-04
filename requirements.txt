@@ -55,3 +55,4 @@ unearth==0.15.0
 uritemplate==4.1.1
 urllib3==2.2.1
 virtualenv==20.25.1
+waitress==3.0.0
