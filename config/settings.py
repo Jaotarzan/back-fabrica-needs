@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url
 
 import os
 from dotenv import load_dotenv
@@ -20,12 +20,12 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-MODE = os.getenv("MODE")
+MODE = os.environ.get("MODE")
 
-SECRET_KEY = "9b7d2c34a8484b3ca7498795aca261942c49be2cf8685c1798a06a8a2c173e24"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-DEBUG = os.getenv("DEBUG", "False")
-ALLOWED_HOSTS = ["*"]
+DEBUG = os.getenv("DEBUG", "False").lower() == 'true'
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(' ')
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://render.com/"]
 
 
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -90,6 +90,17 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
+"""
+
+DATABASES = {
+    "default":{
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3"
+    }
+}
+
+database_url = os.environ.get("DATABASE_URL")
+DATABASES['default'] = dj_database_url.parse(database_url)
 
 """
 DATABASES = {
