@@ -6,4 +6,3 @@ from rest_framework.permissions import IsAuthenticated
 class OutflowViewSet(ModelViewSet):
     queryset = Outflow.objects.all()
     serializer_class = OutflowSerializer
-    permission_classes = [IsAuthenticated]
