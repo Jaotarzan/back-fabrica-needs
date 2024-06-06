@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'uploader',
     "corsheaders",
     "rest_framework_simplejwt",
-    "waitress"
+    "waitress",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
