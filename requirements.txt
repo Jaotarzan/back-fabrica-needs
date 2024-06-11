@@ -13,6 +13,7 @@ django-debug-toolbar==4.2.0
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
 drf-spectacular==0.27.1
+django-filter==24.2
 filelock==3.13.1
 findpython==0.4.1
 h11==0.14.0
