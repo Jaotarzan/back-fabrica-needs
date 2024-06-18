@@ -6,7 +6,7 @@ from rest_framework.serializers import SlugRelatedField
 
 class ProductSerializer(ModelSerializer):
     appearence_attachment_key = SlugRelatedField(
-        source="capa",
+        source="appearence",
         queryset=Image.objects.all(),
         slug_field="attachment_key",
         required=False,
