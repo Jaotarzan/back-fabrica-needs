@@ -148,7 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 if MODE in ["PRODUCTION", "MIGRATE"]:
     MEDIA_URL = '/media/'
 else: 
-    MEDIA_URL = "https://back-fabrica-needs.onrender.com/media/"
+    MEDIA_URL = "https://back-fabrica-needs.onrender.com/api/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
