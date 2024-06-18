@@ -13,12 +13,6 @@ class ProductSerializer(ModelSerializer):
         write_only=True,
     )
     appearence = ImageSerializer(required=False, read_only=True)
-
-    def create(self, validated_data):
-        
-        product = Product.objects.create(**validated_data)
-
-        return product
     class Meta:
         model = Product
         fields = "__all__"
