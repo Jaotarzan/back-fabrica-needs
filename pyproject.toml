@@ -80,6 +80,7 @@ dependencies = [
     "psycopg2==2.9.9",
     "psycopg2-binary>=2.9.9",
     "django-filter>=24.2",
+    "django-cloudinary-storage>=0.3.0",
 ]
 requires-python = "==3.10.*"
 readme = "README.md"
