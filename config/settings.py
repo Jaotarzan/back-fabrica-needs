@@ -140,6 +140,10 @@ USE_TZ = True
 # App Uploader settings
 STATIC_URL = '/static/'
 
+MEDIA_ENDPOINT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
+
 if MODE in ["PRODUCTION", "MIGRATE"]:
     CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
