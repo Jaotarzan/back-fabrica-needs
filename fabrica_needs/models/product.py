@@ -3,8 +3,8 @@ from uploader.models import Image
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.CharField(max_length=300)
+    name = models.CharField(max_length=100)asdsadadsa
+    description = models.CharField(max_length=300, null=True, blank=True)
     amount = models.IntegerField(default=0, null=True, blank=True)
     min = models.IntegerField(default=0, null=True, blank=True)
     appearence = models.ForeignKey(
