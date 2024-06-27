@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MODE = os.environ.get("MODE")
 
 
-SECRET_KEY = "95966174082aa20c731af4acfd9245f4"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = os.environ.get("DEBUG", "False")
 
@@ -164,5 +164,5 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://render.com/", "https://console.cloudinary.com/"]
